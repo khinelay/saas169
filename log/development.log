@@ -8273,3 +8273,638 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-01 00:31:06 -0700
 Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-01 00:47:17 -0700
+Connecting to database specified by database.yml
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 00:47:19 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+ERROR: compiling _app_views_movies_index_html_haml__658601863__619231258 RAISED /home/ubuntu/Documents/hw/hw2-mooc/rottenpotatoes/app/views/movies/index.html.haml:7: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...true_false(( submit_tag, :id => 'ratings_submit', 'Refresh'
+...                               ^
+/home/ubuntu/Documents/hw/hw2-mooc/rottenpotatoes/app/views/movies/index.html.haml:7: syntax error, unexpected ',', expecting ')'
+...t_tag, :id => 'ratings_submit', 'Refresh'
+...                               ^
+Function body:           def _app_views_movies_index_html_haml__658601863__619231258(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "movies/index";_old_output_buffer = @output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>false, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true, :hyphenate_data_attrs=>true, :cdata=>false});_erbout = _hamlout.buffer;@output_buffer = output_buffer ||= ActionView::OutputBuffer.new rescue nil;;
+haml_temp =  form_tag movies_path, :id => 'ratings_form', :method => :get do
+_hamlout.push_text("Include:\n", 0, false);
+ @all_ratings.each do |rating|
+_hamlout.push_text("#{_hamlout.format_script_false_false_false_true_false_true_false(( rating
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_false(( check_box_tag "ratings[#{rating}]"
+));}\n", 0, false);end;_hamlout.push_text("#{_hamlout.format_script_false_false_false_true_false_true_false(( submit_tag, :id => 'ratings_submit', 'Refresh'
+));}\n", 0, false);end;_hamlout.buffer << _hamlout.format_script_false_false_false_true_false_false_false(haml_temp);_hamlout.push_text("\n<h1>All Movies</h1>\n<table id='movies'>\n  <thead>\n    <tr>\n      <th#{_hamlout.adjust_tabs(3); 
+
+
+
+
+_hamlout.attributes({}, nil, params[:sort] == "title" ? {:class => "hilite"} : {})}>#{_hamlout.adjust_tabs(1); _hamlout.format_script_false_true_false_true_false_true_false((link_to "Movie Title", movies_path(:sort => "title"), :id => "title_header"
+));}</th>\n      <th>Rating</th>\n      <th#{
+_hamlout.attributes({}, nil, params[:sort] == "release date" ? {:class =>"hilite"} :{})}>#{_hamlout.adjust_tabs(1); _hamlout.format_script_false_true_false_true_false_true_false((link_to "Release Date", movies_path(:sort => 'release date'), :id => 'release_date_header'
+));}</th>\n      <th>More Info</th>\n    </tr>\n  </thead>\n  <tbody>\n", -1, false);
+
+
+ @movies.each do |movie|
+_hamlout.push_text("    <tr>\n      <td>#{_hamlout.adjust_tabs(2); 
+_hamlout.format_script_false_true_false_true_false_true_false((movie.title
+));}</td>\n      <td>#{_hamlout.adjust_tabs(1); _hamlout.format_script_false_true_false_true_false_true_false((movie.rating
+));}</td>\n      <td>#{_hamlout.adjust_tabs(1); _hamlout.format_script_false_true_false_true_false_true_false((movie.release_date
+));}</td>\n      <td>#{_hamlout.adjust_tabs(1); _hamlout.format_script_false_true_false_true_false_true_false((link_to "More about #{movie.title}", movie_path(movie)
+));}</td>\n    </tr>\n", -1, false);end;_hamlout.push_text("  </tbody>\n</table>\n#{_hamlout.adjust_tabs(-2); 
+_hamlout.format_script_false_false_false_true_false_true_false(( link_to 'Add new movie', new_movie_path
+));}\n", 0, false);::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper if @haml_buffer;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `module_eval'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `compile'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `compile!'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:144:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications.rb:125:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/template.rb:143:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:19:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:17:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:88:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:16:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/usr/local/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:167:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:414:in `_run__548454754__process_action__851487137__callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:121:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:45:in `process'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal.rb:203:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_controller/metal.rb:246:in `block in action'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/usr/local/lib/ruby/gems/1.9.1/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/query_cache.rb:64:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `_run__658312353__call__80620620__callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/rack/logger.rb:32:in `call_app'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `block in call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/tagged_logging.rb:22:in `tagged'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/activesupport-3.2.14/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/static.rb:63:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/engine.rb:484:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/application.rb:231:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.9.1/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+  Rendered movies/index.html.haml within layouts/application (46.8ms)
+Completed 500 Internal Server Error in 187ms
+
+ActionView::Template::Error (/home/ubuntu/Documents/hw/hw2-mooc/rottenpotatoes/app/views/movies/index.html.haml:7: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...true_false(( submit_tag, :id => 'ratings_submit', 'Refresh'
+...                               ^
+/home/ubuntu/Documents/hw/hw2-mooc/rottenpotatoes/app/views/movies/index.html.haml:7: syntax error, unexpected ',', expecting ')'
+...t_tag, :id => 'ratings_submit', 'Refresh'
+...                               ^):
+    4:   - @all_ratings.each do |rating|
+    5:     = rating
+    6:     = check_box_tag "ratings[#{rating}]"
+    7:   = submit_tag, :id => 'ratings_submit', 'Refresh' 
+    8: %h1 All Movies
+    9: 
+    10: %table#movies
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.14) lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.14) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.14) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:19:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /usr/local/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__548454754__process_action__851487137__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__658312353__call__80620620__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (72.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 00:47:42 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" 
+  Rendered movies/index.html.haml within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: -#  This file is app/views/movies/index.html.haml
+    2: = form_tag movies_path, :id => 'ratings_form', :method => :get do
+    3:   Include:
+    4:   - @all_ratings.each do |rating|
+    5:     = rating
+    6:     = check_box_tag "ratings[#{rating}]"
+    7:   = submit_tag  'Refresh' , :id => 'ratings_submit'
+  app/views/movies/index.html.haml:4:in `block in _app_views_movies_index_html_haml__658601863__621868478'
+  app/views/movies/index.html.haml:2:in `_app_views_movies_index_html_haml__658601863__621868478'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 00:48:37 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: -#  This file is app/views/movies/index.html.haml
+    2: = form_tag movies_path, :id => 'ratings_form', :method => :get do
+    3:   Include:
+    4:   - @all_ratings.each do |rating|
+    5:     = rating
+    6:     = check_box_tag "ratings[#{rating}]"
+    7:   = submit_tag  'Refresh', :id => 'ratings_submit'
+  app/views/movies/index.html.haml:4:in `block in _app_views_movies_index_html_haml__658601863_85133870'
+  app/views/movies/index.html.haml:2:in `_app_views_movies_index_html_haml__658601863_85133870'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 00:48:38 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+  Rendered movies/index.html.haml within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: -#  This file is app/views/movies/index.html.haml
+    2: = form_tag movies_path, :id => 'ratings_form', :method => :get do
+    3:   Include:
+    4:   - @all_ratings.each do |rating|
+    5:     = rating
+    6:     = check_box_tag "ratings[#{rating}]"
+    7:   = submit_tag  'Refresh', :id => 'ratings_submit'
+  app/views/movies/index.html.haml:4:in `block in _app_views_movies_index_html_haml__658601863_85133870'
+  app/views/movies/index.html.haml:2:in `_app_views_movies_index_html_haml__658601863_85133870'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 00:49:38 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (13.4ms)
+Completed 500 Internal Server Error in 32ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: =puts 'Ratings: ', params[:ratings].nil?
+    3: = form_tag movies_path, :id => 'ratings_form', :method => :get do
+    4:   Include:
+    5:   - @all_ratings.each do |rating|
+    6:     = rating
+    7:     = check_box_tag "ratings[#{rating}]"
+    8:   = submit_tag  'Refresh', :id => 'ratings_submit'
+  app/views/movies/index.html.haml:5:in `block in _app_views_movies_index_html_haml__658601863__622476418'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml__658601863__622476418'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 00:59:35 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+  Rendered movies/index.html.haml within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: =puts 'Ratings: ', params[:ratings].nil?
+    4: = form_tag movies_path, :id => 'ratings_form', :method => :get do
+    5:   Include:
+    6:   - @all_ratings.each do |rating|
+    7:     = rating
+    8:     = check_box_tag "ratings[#{rating}]", 1, @filtered_ratings.include?(rating) ? true : false
+    9:   = submit_tag  'Refresh', :id => 'ratings_submit'
+  app/views/movies/index.html.haml:6:in `block in _app_views_movies_index_html_haml__658601863__624096088'
+  app/views/movies/index.html.haml:4:in `_app_views_movies_index_html_haml__658601863__624096088'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-01 01:08:13 -0700
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 01:08:13 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: = form_tag movies_path, :id => 'ratings_form', :method => :get do
+    5:   Include:
+    6:   = select :movie, :rating, Movie.all_ratings
+    7:   - @all_ratings.each do |rating|
+    8:     = rating
+    9:     = check_box_tag "ratings[#{rating}]", 1, @filtered_ratings.include?(rating) ? true : false
+    10:   = submit_tag  'Refresh', :id => 'ratings_submit'
+  app/views/movies/index.html.haml:7:in `block in _app_views_movies_index_html_haml__658601863__621290068'
+  app/views/movies/index.html.haml:4:in `_app_views_movies_index_html_haml__658601863__621290068'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 01:14:16 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (15.6ms)[0m  SELECT "movies".* FROM "movies" 
+  Rendered movies/index.html.haml within layouts/application (887.0ms)
+Completed 500 Internal Server Error in 3626ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: = form_tag movies_path, :id => 'ratings_form', :method => :get do
+    5:   Include:
+    6:   = select :movie, :rating, Movie.all_ratings
+    7:   - @all_ratings.each do |rating|
+    8:     = rating.label :movie, :rating, 'R'
+    9:     = rating.select :movie, :rating, Movie.all_rating
+    10:     = check_box_tag "ratings[#{rating}]", 1, @filtered_ratings.include?(rating) ? true : false
+  app/views/movies/index.html.haml:7:in `block in _app_views_movies_index_html_haml__658601863__623046078'
+  app/views/movies/index.html.haml:4:in `_app_views_movies_index_html_haml__658601863__623046078'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (244.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (165.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (852.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 01:19:24 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (99.1ms)
+Completed 500 Internal Server Error in 1158ms
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    3: =puts 'Ratings: ', params[:ratings].nil?
+    4: = form_tag movies_path, :id => 'ratings_form', :method => :get do
+    5:   Include:
+    6:     - @all_ratings.each do |rating|
+    7:     = rating.label :movie, :rating, 'R'
+    8:     = rating.select :movie, :rating, Movie.all_rating
+    9:     = check_box_tag "ratings[#{rating}]", 1, @filtered_ratings.include?(rating) ? true : false
+  app/views/movies/index.html.haml:6
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (104.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (221.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 01:20:52 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (64.9ms)[0m  SELECT "movies".* FROM "movies" 
+  Rendered movies/index.html.haml within layouts/application (29.0ms)
+Completed 500 Internal Server Error in 135ms
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    3: =puts 'Ratings: ', params[:ratings].nil?
+    4: =form_tag movies_path, :id => 'ratings_form', :method => :get do
+    5:   Include:
+    6:     - @all_ratings.each do |rating|
+    7:     = rating.label :movie, :rating, 'R'
+    8:     = rating.select :movie, :rating, Movie.all_rating
+    9:     = check_box_tag "ratings[#{rating}]", 1, @filtered_ratings.include?(rating) ? true : false
+  app/views/movies/index.html.haml:6
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4853.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5024.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 01:23:15 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (36.3ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (44.3ms)
+Completed 500 Internal Server Error in 95ms
+
+ActionView::Template::Error (undefined method `include?' for nil:NilClass):
+    4:   Include:
+    5:   - @all_ratings.each do |rating|
+    6:     = rating
+    7:     = check_box_tag "ratings[#{rating}]", 1, @filtered_ratings.include?(rating) ? true : false
+    8:   = submit_tag  'Refresh', :id => 'ratings_submit'
+    9: 
+    10: 
+  app/views/movies/index.html.haml:7:in `block (2 levels) in _app_views_movies_index_html_haml__658601863__617634308'
+  app/views/movies/index.html.haml:5:in `each'
+  app/views/movies/index.html.haml:5:in `block in _app_views_movies_index_html_haml__658601863__617634308'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml__658601863__617634308'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (28.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (83.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 01:23:54 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" 
+  Rendered movies/index.html.haml within layouts/application (272.6ms)
+Completed 200 OK in 790ms (Views: 784.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-01 01:23:55 -0700
+Served asset /application.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-01 01:23:55 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-01 01:23:55 -0700
+Served asset /jquery.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-01 01:23:56 -0700
+Served asset /application.js - 304 Not Modified (33ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 01:25:09 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (35.8ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (87.6ms)
+Completed 200 OK in 715ms (Views: 677.5ms | ActiveRecord: 35.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-01 01:25:10 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-01 01:25:10 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-01 01:25:10 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-01 01:25:10 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 01:26:10 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.6ms)[0m  SELECT "movies".* FROM "movies" 
+  Rendered movies/index.html.haml within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: %h1 All Movies
+    3: = form_tag movies_path, :id => "ratings_form", :method => :get do
+    4:   Include:
+    5:   - @all_ratings.each do |rating|
+    6:     = rating
+    7:     = check_box_tag "ratings[#{rating}]"
+    8:   = submit_tag 'Refresh' 
+  app/views/movies/index.html.haml:5:in `block in _app_views_movies_index_html_haml__658601863__623550478'
+  app/views/movies/index.html.haml:3:in `_app_views_movies_index_html_haml__658601863__623550478'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.9ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 01:26:24 -0700
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (10.5ms)[0m  [1mSELECT "movies".* FROM "movies" [0m
+  Rendered movies/index.html.haml within layouts/application (189.3ms)
+Completed 200 OK in 388ms (Views: 338.3ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-01 01:26:25 -0700
+Served asset /application.css - 304 Not Modified (66ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-01 01:26:25 -0700
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-01 01:26:25 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-01 01:26:25 -0700
+Served asset /application.js - 304 Not Modified (80ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 01:31:23 -0700
+
+NoMethodError (undefined method `all_ratings' for #<Class:0xb59016bc>):
+  app/controllers/movies_controller.rb:3:in `initialize'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (153.5ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (236.3ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (650.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-11-01 01:32:50 -0700
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" 
+  Rendered movies/index.html.haml within layouts/application (12.1ms)
+Completed 200 OK in 352ms (Views: 259.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-01 01:33:42 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-01 01:33:44 -0700
+Served asset /jquery.js - 304 Not Modified (61ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-01 01:33:44 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-01 01:33:44 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)

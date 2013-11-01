@@ -1,5 +1,3 @@
 class Movie < ActiveRecord::Base
-    def sort
-     @movie = Movies.sort(title)
-    end
+    
 end
