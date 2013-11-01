@@ -40,8 +40,8 @@ class MoviesController < ApplicationController
  
   def sort
     sort = params[:sort] || session[:sort]
-    if sort == 'title'
-    ordering = {:order => :title}
+if sort == 'title'
+  ordering = {:order => :title}
 end
     end
 

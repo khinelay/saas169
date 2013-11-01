@@ -1,5 +1,5 @@
 html, body {
-  margin: 1;
+  margin: 0;
   padding: 0;
   background: White;
   color: DarkSlateGrey;
@@ -58,4 +58,8 @@ form label {
   line-height: 25px;
   font-weight: bold;
   color: maroon;
+}
+css
+table#movies th.hilite {
+  background-color: yellow;
 }
