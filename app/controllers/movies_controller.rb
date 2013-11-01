@@ -8,6 +8,8 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @movies = @movies.order('title') if params['sort'] == 'title'
+    @movies = @movies.order('release date') if params['sort'] == 'release date'
   end
 
   def new

@@ -8,6 +8,8 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @movies = @movies.order('title') if params['sort'] == 'title'
+    @movies = @movies.order('release date') if params['sort'] == 'releasedate'
   end
 
   def new
@@ -40,8 +42,8 @@ class MoviesController < ApplicationController
  
   def sort
     sort = params[:sort] || session[:sort]
-if sort == 'title'
-  ordering = {:order => :title}
+    if sort == 'title'
+    ordering = {:order => :title}
 end
     end
 
