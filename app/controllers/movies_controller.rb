@@ -1,8 +1,5 @@
 class MoviesController < ApplicationController
-  def initialize
-        @all_ratings = Movie.all_ratings
-        super
-  end
+
   def show
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
@@ -16,7 +13,6 @@ class MoviesController < ApplicationController
       ordering,@title_header = {:order => :title}, 'hilite'
     when 'release_date'
       ordering,@date_header = {:order => :release_date}, 'hilite'
-     @movies = Movie.find(:all, :order =>"release_date") if params['sort'] == 'release'
     end
     @all_ratings = Movie.all_ratings
     @selected_ratings = params[:ratings] || session[:ratings] || {}
@@ -32,7 +28,6 @@ class MoviesController < ApplicationController
     end
     @movies = Movie.find_all_by_rating(@selected_ratings.keys, ordering)
   end
-
 
   def new
     # default: render 'new' template
@@ -58,15 +53,8 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
-    flash[:notice] = "Movie '#{@movie.title}' deleted." 
+    flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
   end
- 
-  def sort
-    sort = params[:sort] || session[:sort]
-    if sort == 'title'
-    ordering = {:order => :title}
-   end
-    end
 
 end
